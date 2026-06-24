@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Font Awesome FIX -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+<header>
+    <div class="logo">Harshit's <span>Verified Credentials</span></div>
+
+</header>
+
+<main class="portfolio-container">
+    
+    <!-- Certificate 1 -->
+    <div class="cert-card">
+        <div class="cert-img-container" onclick="openImageModal('dct.jpeg')">
+            <img src="dct.jpeg" class="cert-thumbnail">
+            <div class="overlay-hover"><i class="fas fa-search-plus"></i> View Certificate</div>
+        </div>
+        <div class="cert-info">
+            <h3>Summer Trainning 2025</h3>
+            <p>Issued by: Digicoders pvt ltd.</p>
+            <button class="view-btn" onclick="openDescModal('desc1')">Read Description</button>
+        </div>
+    </div>
+
+    <!-- Certificate 2 -->
+    <div class="cert-card">
+        <div class="cert-img-container" onclick="openImageModal('btup.jpeg')">
+            <img src="btup.jpeg" class="cert-thumbnail">
+            <div class="overlay-hover"><i class="fas fa-search-plus"></i> View Certificate</div>
+        </div>
+        <div class="cert-info">
+            <h3>BEST Credit Scorer</h3>
+            <p>Issued by: Board of technical Education UP</p>
+            <button class="view-btn" onclick="openDescModal('desc2')">Read Description</button>
+        </div>
+    </div>
+
+    <!-- Certificate 3 -->
+    <div class="cert-card">
+        <div class="cert-img-container" onclick="openImageModal('msms.jpeg')">
+            <img src="msms.jpeg" class="cert-thumbnail">
+            <div class="overlay-hover"><i class="fas fa-search-plus"></i> View Certificate</div>
+        </div>
+        <div class="cert-info">
+            <h3>MSME Skill devolopment</h3>
+            <p>Issued by:MSME Govt of India</p>
+            <button class="view-btn" onclick="openDescModal('desc3')">Read Description</button>
+        </div>
+    </div>
+
+</main>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeImageModal()">&times;</span>
+    <img class="modal-zoom-img" id="zoomedImg">
+</div>
+
+<!-- DESCRIPTION MODALS -->
+<div id="desc1" class="modal desc-modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeDescModal('desc1')">&times;</span>
+        <h2>Summer Training</h2>
+        <p class="issuer"><strong>Provider:</strong> DigiCoders</p>
+        <hr>
+        <p class="description">uccessfully completed an intensive Summer Training program in Python with Django, where I gained hands-on experience in building dynamic and scalable web applications.
+
+During the training, I developed a strong foundation in Python programming and learned how to use the Django framework for backend development, including working with models, views, templates, and RESTful APIs.
+
+I also worked on real-world mini projects, implemented database integration using MySQL/SQLite, and understood core concepts like authentication, CRUD operations, and MVC architecture.
+
+This training enhanced my problem-solving skills and gave me practical exposure to modern web development practices..</p>
+    </div>
+</div>
+
+<div id="desc2" class="modal desc-modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeDescModal('desc2')">&times;</span>
+        <h2>Certificate Title 2</h2>
+        <p class="issuer"><strong>Board of technical Education</strong> UP government</p>
+        <hr>
+        <p class="description">Successfully completed the First Year of the Three-Year Diploma in Computer Science and Engineering from Feroze Gandhi Polytechnic, Raebareli, under the Board of Technical Education, Uttar Pradesh (BTEUP), Lucknow.
+
+Achieved the required academic credits in accordance with the National Credit Framework (NCRF) under NEP 2020 during the academic session 2024–2025.
+
+This certification reflects a strong foundation in core computer science subjects, including programming, basic computing concepts, and technical problem-solving skills.
+
+The course has helped in developing analytical thinking and preparing for advanced studies and real-world applications in the field of technology.</p>
+    </div>
+</div>
+
+<div id="desc3" class="modal desc-modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeDescModal('desc3')">&times;</span>
+        <h2>Skill devolopment Programme govt of india</h2>
+        <p class="issuer"><strong>Provider:</strong> MSME Government of India</p>
+        <hr>
+        <p class="description">Successfully completed the Entrepreneurship-cum-Skill Development Programme (E-SDP) organized by the Ministry of Micro, Small & Medium Enterprises (MSME), Government of India.
+
+The training was conducted from 29 September 2025 to 14 November 2025 at Feroze Gandhi Polytechnic, Raebareli, focusing on Web Designing.
+
+During this program, I gained practical knowledge of web development concepts including HTML, CSS, and modern design techniques, along with an understanding of entrepreneurship skills and digital business fundamentals.
+
+This experience enhanced my technical abilities as well as my entrepreneurial mindset, preparing me to build and manage real-world web-based solutions..</p>
+    </div>
+</div>
+
+<script>
+function openImageModal(imageSrc) {
+    document.getElementById("zoomedImg").src = imageSrc;
+    document.getElementById("imageModal").style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closeImageModal() {
+    document.getElementById("imageModal").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function openDescModal(id) {
+    document.getElementById(id).style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closeDescModal(id) {
+    document.getElementById(id).style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+window.onclick = function(event) {
+    if (event.target.id === "imageModal") closeImageModal();
+
+    if (event.target.classList.contains("desc-modal")) {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+}
+</script>
+
+</body>
+</html>
